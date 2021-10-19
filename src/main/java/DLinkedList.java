@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class DLinkedList<T> {
 
     private Node<T> head;
@@ -115,12 +117,25 @@ public class DLinkedList<T> {
 
     @Override
     public String toString() {
-        var sb = new StringBuilder("");
+        var sb = new StringBuilder();
         var h = head;
         while (h != null) {
             sb.append(h.data).append(" ");
             h = h.next;
         }
         return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DLinkedList<?> that = (DLinkedList<?>) o;
+        return size == that.size && Objects.equals(head, that.head);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(head, size);
     }
 }

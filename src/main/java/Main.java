@@ -69,14 +69,5 @@ public class Main {
             }
 
         } while (command != 0);
-
-        list.pushBack(1);
-        list.pushFront(2);
-        list.pushBack(3);
-        list.pushBack(4);
-        list.printList();
-        System.out.println(list.get(0));
-        System.out.println(list.get(1));
-        System.out.println(list.get(3));
     }
 }
