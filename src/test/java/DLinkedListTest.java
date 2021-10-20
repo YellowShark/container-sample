@@ -54,10 +54,10 @@ public class DLinkedListTest {
     @Test
     public void test_insert() {
         var list = new DLinkedList<Integer>();
-        list.pushBack(1);
-        list.pushBack(2);
-        list.insert(0, 66);
+        list.insert(0, 1);
+        list.insert(0, 2);
+        list.insert(1, 66);
         assertEquals(3, list.getSize());
-        assertEquals(66, list.get(0).intValue());
+        assertEquals(66, list.get(1).intValue());
     }
 }
