@@ -70,21 +70,20 @@ public class DLinkedList<T> {
     }
 
     public void insert(int position, T data) {
-        //if (position < 0 || position > size) return;
-        //if (position == 0)
-            pushFront(data);
-        //else if (position == size) pushBack(data);
-//        else {
-//            var currPos = 0;
-//            var h = head;
-//            while (position - 1 != currPos) {
-//                h = h.next;
-//                currPos++;
-//            }
-//            var temp = new Node<>(data);
-//            temp.next = h.next;
-//            h.next = temp;
-//        }
+        if (position < 0 || position > size) return;
+        if (position == 0) pushFront(data);
+        else if (position == size) pushBack(data);
+        else {
+            var currPos = 0;
+            var h = head;
+            while (position - 1 != currPos) {
+                h = h.next;
+                currPos++;
+            }
+            var temp = new Node<>(data);
+            temp.next = h.next;
+            h.next = temp;
+        }
     }
 
     public T get(int position) {
